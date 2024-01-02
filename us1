@@ -1,0 +1,33 @@
+// ==UserScript==
+// @name         Пошук в Реєстрі потужностей (agro-id.gov.ua)
+// @namespace    https://www.agro-id.gov.ua/reestr.rs/rs/
+// @version      2024-01-02
+// @description  пошук без Коду КАТОТТГ
+// @author       І.К.
+// @match        https://www.agro-id.gov.ua/reestr.rs/rs/
+// @icon         
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // Your code here...
+    var element;
+    // Получаем элемент
+    element = document.getElementById('search');
+    // Добавляем обработку события
+    element.onclick = (event) => {
+        console.log('search onclick handler');
+        getInformFromAPI(getData(), 0);
+    };
+
+    // Получаем элемент
+    element = document.getElementById('excel');
+    // Добавляем обработку события
+    element.onclick = (event) => {
+        console.log('excel onclick handler');
+        getInformFromAPI(getData(), 1);
+    };
+
+})();
